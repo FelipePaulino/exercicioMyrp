@@ -1,0 +1,162 @@
+[
+{
+  "nome": "Lixeira",
+  "descricao": "Reutilizável e fácil de limpar. Adequada para uso interno e externo.",
+  "prateleira": 1,
+  "galpao": "0xABCDE",
+  "quantidade": 150,
+  "preco": 25.99
+},
+{
+  "nome": "Cadeira Ergonômica",
+  "descricao": "Design moderno e ergonômico. Ideal para longas horas de trabalho.",
+  "prateleira": 2,
+  "galpao": "0x12345",
+  "quantidade": 100,
+  "preco": 19.99
+},
+{
+  "nome": "Caixa de Ferramentas",
+  "descricao": "Conjunto abrangente de ferramentas para todas as suas necessidades de reparo.",
+  "prateleira": 3,
+  "galpao": "0xFEDC0",
+  "quantidade": 200,
+  "preco": 30.5
+},
+{
+  "nome": "Máquina de Café",
+  "descricao": "Prepara café fresco em minutos. Fácil de usar e limpar.",
+  "prateleira": 4,
+  "galpao": "0x67890",
+  "quantidade": 80,
+  "preco": 15.5
+},
+{
+  "nome": "Fone de Ouvido Bluetooth",
+  "descricao": "Conectividade sem fio. Qualidade de som excepcional.",
+  "prateleira": 5,
+  "galpao": "0xABCDE",
+  "quantidade": 120,
+  "preco": 22.75
+},
+{
+  "nome": "Monitor UltraWide",
+  "descricao": "Tela ampla para uma experiência de visualização imersiva.",
+  "prateleira": 1,
+  "galpao": "0xABCDE",
+  "quantidade": 250,
+  "preco": 35.99
+},
+{
+  "nome": "Lâmpada LED Inteligente",
+  "descricao": "Controle a iluminação com seu smartphone. Economia de energia.",
+  "prateleira": 2,
+  "galpao": "0x12345",
+  "quantidade": 60,
+  "preco": 12
+},
+{
+  "nome": "Mochila Resistente à Água",
+  "descricao": "Ideal para atividades ao ar livre. Design durável e à prova d'água.",
+  "prateleira": 3,
+  "galpao": "0xFEDC0",
+  "quantidade": 180,
+  "preco": 28.5
+},
+{
+  "nome": "Teclado Mecânico",
+  "descricao": "Teclas táteis e resposta rápida. Perfeito para jogos e digitação intensiva.",
+  "prateleira": 4,
+  "galpao": "0x67890",
+  "quantidade": 100,
+  "preco": 18.75
+},
+{
+  "nome": "Smartphone Avançado",
+  "descricao": "Tecnologia de ponta com câmera de alta resolução e desempenho rápido.",
+  "prateleira": 5,
+  "galpao": "0xABCDE",
+  "quantidade": 300,
+  "preco": 45
+},
+{
+  "nome": "Ventilador Portátil",
+  "descricao": "Leve e fácil de transportar. Ideal para dias quentes de verão.",
+  "prateleira": 1,
+  "galpao": "0xABCDE",
+  "quantidade": 150,
+  "preco": 25.99
+},
+{
+  "nome": "Impressora Multifuncional",
+  "descricao": "Imprime, digitaliza e copia. Eficiente e compacta para uso doméstico.",
+  "prateleira": 2,
+  "galpao": "0x12345",
+  "quantidade": 200,
+  "preco": 30.5
+},
+{
+  "nome": "Ferramentas Elétricas",
+  "descricao": "Conjunto de ferramentas elétricas poderosas para projetos de construção.",
+  "prateleira": 3,
+  "galpao": "0xFEDC0",
+  "quantidade": 90,
+  "preco": 16.99
+},
+{
+  "nome": "Mesa de Jantar Moderna",
+  "descricao": "Design elegante e durável. Acomoda confortavelmente a família.",
+  "prateleira": 4,
+  "galpao": "0x67890",
+  "quantidade": 130,
+  "preco": 20.25
+},
+{
+  "nome": "Câmera de Segurança Wi-Fi",
+  "descricao": "Monitoramento remoto com resolução de alta definição. Fácil de instalar.",
+  "prateleira": 5,
+  "galpao": "0xABCDE",
+  "quantidade": 70,
+  "preco": 14.75
+},
+{
+  "nome": "Liquidificador Potente",
+  "descricao": "Mistura suave e eficiente para smoothies e outras receitas.",
+  "prateleira": 1,
+  "galpao": "0xABCDE",
+  "quantidade": 110,
+  "preco": 21
+},
+{
+  "nome": "Mala de Viagem Resistente",
+  "descricao": "Proteja seus pertences durante as viagens. Durável e fácil de manusear.",
+  "prateleira": 2,
+  "galpao": "0x12345",
+  "quantidade": 160,
+  "preco": 26.5
+},
+{
+  "nome": "Smart TV 4K",
+  "descricao": "Qualidade de imagem incrível com resolução 4K. Acesse seus aplicativos favoritos.",
+  "prateleira": 3,
+  "galpao": "0xFEDC0",
+  "quantidade": 220,
+  "preco": 33.75
+},
+{
+  "nome": "Ferro de Passar a Vapor",
+  "descricao": "Remova rugas com facilidade. Design leve e ergonômico.",
+  "prateleira": 4,
+  "galpao": "0x67890",
+  "quantidade": 40,
+  "preco": 10.99
+},
+{
+  "nome": "Máquina de Lavar Roupa",
+  "descricao": "Eficiente e econômica. Lave suas roupas com praticidade.",
+  "prateleira": 5,
+  "galpao": "0xABCDE",
+  "quantidade": 190,
+  "preco": 29.25
+}
+]
