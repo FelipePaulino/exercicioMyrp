@@ -1,36 +1,41 @@
 <template lang="pug">
 div
-      Header(:totalItems="totalItems", :totalPrice="totalPrice")
-      div
-       .container
+    Header(:totalItems="totalItems", :totalPrice="totalPrice")
+    div
+      .container
         .buttonAdd
-        .formContent
-          button(v-if="!showForm", @click="toggleForm") Adicionar Novo Item
-       
-        .form
-          div(v-if="showForm")
-            form(@submit.prevent="addItem")
-              label(for="nome") Nome
-              input#nome(v-model="newItem.nome", type="text", required)
-              label(for="descricao") Descrição
-              input#descricao(v-model="newItem.descricao", type="text", required)
-              label(for="prateleira") Prateleira
-              input#prateleira(v-model="newItem.prateleira", type="text", required)
-              label(for="galpao") Galpão
-              input#galpao(v-model="newItem.galpao", type="text", required)
-              label(for="quantidade") Quantidade
-              input#quantidade(v-model="newItem.quantidade", type="number", required)
-              label(for="preco") Preço
-              input#preco(v-model="newItem.preco", type="number", step="0.02", required)
+          .formContent
+            button(v-if="!showForm", @click="toggleForm") Adicionar Novo Item
+          
+          .form
+            div(v-if="showForm")
+              form(@submit.prevent="addItem")
+                label(for="nome") Nome
+                input#nome(v-model="newItem.nome", type="text", required)
+
+                label(for="descricao") Descrição
+                input#descricao(v-model="newItem.descricao", type="text", required)
+
+                label(for="prateleira") Prateleira
+                input#prateleira(v-model="newItem.prateleira", type="text", required)
+
+                label(for="galpao") Galpão
+                input#galpao(v-model="newItem.galpao", type="text", required)
+
+                label(for="quantidade") Quantidade
+                input#quantidade(v-model="newItem.quantidade", type="number", required)
+                
+                label(for="preco") Preço
+                input#preco(v-model="newItem.preco", type="number", step="0.02", required)
   
-              div 
-              .buttonAddCancel
-              button(type="submit") Adicionar
-              button(v-if="showForm", @click="cancelAdd") Cancelar
+                div 
+                  .buttonAddCancel
+                    button(type="submit") Adicionar
+                    button(v-if="showForm", @click="cancelAdd") Cancelar
       Table(:itemList="itemList", :removeItem="removeItem")
 </template>
   
-  <script>
+<script>
   import dados from "./dados.json";
   import Header from "./components/Header.vue";
   import Table from "./components/Table.vue";
@@ -66,45 +71,61 @@ div
     },
   
     methods: {
-      removeItem(index) {
-        this.itemList.splice(index, 1);
-      },
-      addItem() {
-    const trimmedNome = this.newItem.nome.trim();
-    const trimmedDescricao = this.newItem.descricao.trim();
-    const trimmedPrateleira = this.newItem.prateleira.trim();
-    const trimmedGalpao = this.newItem.galpao.trim();
+
+      showRemoveFeedback() {
+      this.showAlert("Item removido com sucesso!", "alert-success");
+    },
   
-    if (
-      trimmedNome &&
-      trimmedDescricao &&
-      trimmedPrateleira &&
-      trimmedGalpao &&
-      this.newItem.quantidade !== null &&
-      this.newItem.preco !== null
-    ) {
-      this.itemList.push({ ...this.newItem });
-      this.newItem = {
-        nome: "",
-        descricao: "",
-        prateleira: null,
-        galpao: "",
-        quantidade: null,
-        preco: null,
-      };
-      this.showForm = false;
-      this.showAlert("Item adicionado com sucesso!", "alert-success");
-    } else {
-      this.showAlert("Por favor, preencha todos os campos corretamente.", "alert-warning");
-    }
-  },
+      removeItem(index) {
+      this.itemList.splice(index, 1);
+      this.showRemoveFeedback();
+    },
+      addItem() {
+        const trimmedNome = this.newItem.nome.trim();
+        const trimmedDescricao = this.newItem.descricao.trim();
+        const trimmedPrateleira = this.newItem.prateleira.trim();
+        const trimmedGalpao = this.newItem.galpao.trim();
+  
+        if (
+          trimmedNome &&
+          trimmedDescricao &&
+          trimmedPrateleira &&
+          trimmedGalpao &&
+          this.newItem.quantidade !== null &&
+          this.newItem.preco !== null
+        ) {
+          this.itemList.push({ ...this.newItem });
+          this.newItem = {
+            nome: "",
+            descricao: "",
+            prateleira: null,
+            galpao: "",
+            quantidade: null,
+            preco: null,
+          };
+          this.showForm = false;
+          this.showAlert("Item adicionado com sucesso!", "alert-success");
+        } else {
+          this.showAlert("Por favor, preencha todos os campos corretamente.", "alert-warning");
+        }
+      },
   
       toggleForm() {
         this.showForm = !this.showForm;
       },
       cancelAdd() {
+        this.newItem = {
+          nome: "",
+          descricao: "",
+          prateleira: null,
+          galpao: "",
+          quantidade: null,
+          preco: null,
+        };
         this.showForm = false;
+        this.$refs.itemForm.reset(); 
       },
+  
       fetchData() {
         setTimeout(() => {
           this.itemList = dados;
@@ -112,29 +133,29 @@ div
       },
   
       showAlert(message, type) {
-      const alertClass = `alert ${type}`;
-      const alertElement = document.createElement("div");
-      alertElement.className = alertClass;
-      alertElement.textContent = message;
+        const alertClass = `alert ${type}`;
+        const alertElement = document.createElement("div");
+        alertElement.className = alertClass;
+        alertElement.textContent = message;
   
-      const closeButton = document.createElement("button");
-      closeButton.textContent = "Fechar";
-      closeButton.addEventListener("click", () => {
-        document.body.removeChild(alertElement);
-      });
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Fechar";
+        closeButton.addEventListener("click", () => {
+          document.body.removeChild(alertElement);
+        });
   
-      alertElement.appendChild(closeButton);
-      document.body.appendChild(alertElement);
-    },
+        alertElement.appendChild(closeButton);
+        document.body.appendChild(alertElement);
+      },
     },
   
     mounted() {
       this.fetchData();
     },
   };
-  </script>
+</script>
   
-  <style  lang="scss">
+  <style lang="scss">
   
   .container{
     margin-top: 70px;
@@ -148,7 +169,6 @@ div
   
   .buttonAdd button {
     font-family: 'Playfair Display', serif;
-    margin-top: 170px;
     background-color: #2196f3;
     color: white;
     padding: 10px 15px;
