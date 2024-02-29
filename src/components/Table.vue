@@ -20,19 +20,21 @@ table
         button(@click="removeItem(index)") Remover
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue';
+
+export default defineComponent({
   props: {
     itemList: {
-      type: Array,
+      type: Array as PropType<Array<{ nome: string, descricao: string, prateleira: string, galpao: string, quantidade: number, preco: number }>>,
       required: true,
     },
     removeItem: {
-      type: Function,
+      type: Function as PropType<(index: number) => void>,
       required: true,
     },
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

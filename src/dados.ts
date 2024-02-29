@@ -1,4 +1,14 @@
-[
+interface Product {
+  nome: string;
+  descricao: string;
+  prateleira: number;
+  galpao: string;
+  quantidade: number;
+  preco: number;
+}
+
+const products: Product[] = [
+
 {
   "nome": "Lixeira",
   "descricao": "Reutilizável e fácil de limpar. Adequada para uso interno e externo.",
@@ -159,4 +169,6 @@
   "quantidade": 190,
   "preco": 29.25
 }
-]
+];
+
+export default products;
